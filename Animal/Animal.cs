@@ -14,7 +14,6 @@
         {
             return "Meow?";
         }
-
         public string sleep()
         {
             return $"{this.name} is now sleeping";
