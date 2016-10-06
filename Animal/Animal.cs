@@ -1,4 +1,4 @@
-﻿namespace Zoolandia
+﻿namespace Zoolandia.Animals
 {
     public class Animal
     {
@@ -13,6 +13,15 @@
         public virtual string Noise()
         {
             return "Meow?";
+        }
+
+        public string Feed(string food)
+        {
+            return $"{this.name} ate the {food}";
+        }
+        public string Feed(string food, int number)
+        {
+            return $"{this.name} ate {number} {food}s";
         }
         public string sleep()
         {

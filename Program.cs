@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Zoolandia.Animals;
 
 namespace Zoolandia
 {
@@ -37,6 +38,7 @@ namespace Zoolandia
             foreach (Animal animal in pets)
             {
                 Console.WriteLine($"I have a {animal.getSpecies()} named {animal.name} he has {animal.numberOfLegs} legs and weighs {animal.weight} pounds, he goes {animal.Noise()}!");
+                Console.WriteLine($"{animal.Feed("porkchop", 5)}");
                 Console.WriteLine($"{animal.sleep()}");
             };
         }

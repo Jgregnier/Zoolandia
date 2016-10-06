@@ -1,4 +1,4 @@
-﻿namespace Zoolandia
+﻿namespace Zoolandia.Animals
 {
     public class Dog : Animal
     {
