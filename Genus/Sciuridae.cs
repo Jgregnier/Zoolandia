@@ -2,11 +2,15 @@
 
 namespace Zoolandia.Genus
 {
-    public class Sciuridae : Animal
+    public class Sciuridae : Genus
     {
-        public override string Noise()
+        public override string GetHideType()
         {
-            return "Squeek squeek";
+            return "fluffy soft fur";
+        }
+        public override string GetGenus()
+        {
+            return "Sciuridae";
         }
     }
 }

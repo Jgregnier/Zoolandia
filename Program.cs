@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using Zoolandia.Animals;
 using Zoolandia.Species;
+using Zoolandia.Genus;
 
 namespace Zoolandia
 {
@@ -9,63 +9,50 @@ namespace Zoolandia
     {
         public static void Main(string[] args)
         {
-            Animal redSquirrel = new RedSquirrel
-            {
-                name = "Squirrel Bro",
-                numberOfLegs = 4,
-                weight = 2.5M
-            };
+            Animal myOnlyFriend = new Animal();
 
-            Animal yellowSquirrel = new YellowSquirrel
-            {
-                name = "Squirrel Dude",
-                numberOfLegs = 4,
-                weight = 1.5M
-            };
+            //Establishing my dog's Species
+            Species.Species dog = new Dog();
 
-            Animal gator = new Gator
-            {
-                name = "Chompy",
-                numberOfLegs = 4,
-                weight = 200M
-            };
+            //Establishing my dog's Genus
+            Genus.Genus canis = new Canis();
 
-            Animal chineseGator = new ChineseGator
-            {
-                name = "Chompy's chinese cousin",
-                numberOfLegs = 4,
-                weight = 175M
-            };
+            myOnlyFriend.species = dog;
+            myOnlyFriend.genus = canis;
 
-            Animal dog = new Dog
-            {
-                name = "Ralph",
-                numberOfLegs = 3,
-                weight = 50M
-            };
+            //Making default animal properties
+            myOnlyFriend.name = "Winston Beauregard";
+            myOnlyFriend.numberOfLegs = 4;
+            myOnlyFriend.weight = 70M;
 
-            Animal wolf = new Wolf
-            {
-                name = "Wolf Bro",
-                numberOfLegs = 4,
-                weight = 100M
-            };
+            //Making Squirrel
+            Animal annoyingSquirrel = new Animal();
+            Species.Species squirrel = new RedSquirrel();
+            Genus.Genus squirrelGenus = new Sciuridae();
 
-            List<Animal> pets = new List<Animal>();
+            annoyingSquirrel.species = squirrel;
+            annoyingSquirrel.genus = squirrelGenus;
 
-            pets.Add(redSquirrel);
-            pets.Add(yellowSquirrel);
-            pets.Add(gator);
-            pets.Add(chineseGator);
-            pets.Add(dog);
-            pets.Add(wolf);
+            annoyingSquirrel.name = "Annoying Squirrel";
+            annoyingSquirrel.weight = 1M;
 
-            foreach (Animal animal in pets)
-            {
-                Console.WriteLine($"I have a {animal.getSpecies()} named {animal.name} he has {animal.numberOfLegs} legs and weighs {animal.weight} pounds, he goes {animal.Noise()}!");
-                Console.WriteLine($"{animal.Feed("porkchop", 5)}");
-                Console.WriteLine($"{animal.sleep()} \r\n");
-            };
+            //Making Alligator
+            Animal dirtyAlligatorBastard = new Animal();
+            Species.Species gator = new Gator();
+            Genus.Genus gatorGenus = new Alligatoridae();
+
+            dirtyAlligatorBastard.species = gator;
+            dirtyAlligatorBastard.genus = gatorGenus;
+
+            dirtyAlligatorBastard.name = "The Stupid Alligator";
+
+            Console.WriteLine($"I had a RAD dog named {myOnlyFriend.name}\r\nHe was a {myOnlyFriend.species.GetSpecies()} of the {myOnlyFriend.genus.GetGenus()} Family");
+            Console.WriteLine($"{myOnlyFriend.name} used to always say {myOnlyFriend.species.Noise()}");
+            Console.WriteLine($"One day a {annoyingSquirrel.species.GetSpecies()} of the {annoyingSquirrel.genus.GetGenus()} family ran onto our property, lets call him {annoyingSquirrel.name}");
+            Console.WriteLine($"{myOnlyFriend.name} weighed {myOnlyFriend.weight} Pounds, {annoyingSquirrel.name} only weighed {annoyingSquirrel.weight} Pound");
+            Console.WriteLine($"After {myOnlyFriend.name} chased the intruder off our property {annoyingSquirrel.name} called his friend {dirtyAlligatorBastard.name} To fight {myOnlyFriend.name}");
+            Console.WriteLine($"{myOnlyFriend.Sleep()}");
+            Console.WriteLine($"{dirtyAlligatorBastard.Feed("Winston")} :(");
         }
     }
 }
