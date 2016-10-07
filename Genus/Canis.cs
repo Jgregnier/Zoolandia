@@ -2,11 +2,15 @@
 
 namespace Zoolandia.Genus
 {
-    public class Canis : Animal
+    public class Canis : Genus
     {
-        public override string Noise()
+        public override string GetHideType()
         {
-            return "Woof Woof";
+            return "normal Dog Fur";
+        }
+        public override string GetGenus()
+        {
+            return "Canis";
         }
     }
 }

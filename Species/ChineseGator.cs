@@ -2,11 +2,15 @@
 
 namespace Zoolandia.Species
 {
-    public class ChineseGator : Alligatoridae
+    public class ChineseGator : Species
     {
-        public override string getSpecies()
+        public override string GetSpecies()
         {
             return "Alligator Sinensis";
+        }
+        public override string Noise()
+        {
+            return "Wraw wraw wraw wraw";
         }
     }
 }

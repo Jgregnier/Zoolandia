@@ -2,11 +2,15 @@
 
 namespace Zoolandia.Species
 {
-    public class Gator : Alligatoridae
+    public class Gator : Species
     {
-        public override string getSpecies()
+        public override string GetSpecies()
         {
             return "Alligator Mississippiensis";
+        }
+        public override string Noise()
+        {
+            return "WRARRRRRRRRW";
         }
     }
 }

@@ -2,11 +2,15 @@
 
 namespace Zoolandia.Genus
 {
-    public class Alligatoridae : Animal
+    public class Alligatoridae : Genus
     {
-        public override string Noise()
+        public override string GetHideType()
         {
-            return "WRARRR";
+            return "tough alligator scales";
+        }
+        public override string GetGenus()
+        {
+            return "Alligatoridae";
         }
     }
 }

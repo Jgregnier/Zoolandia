@@ -1,26 +1,21 @@
-﻿namespace Zoolandia.Animals
+﻿using Zoolandia.Genus;
+using Zoolandia.Species;
+
+namespace Zoolandia.Animals
 {
     public class Animal
     {
+        //Species
+        public Species.Species species { get; set; }
+        //Genus
+        public Genus.Genus genus { get; set; }
 
         //All animals have name, number of legs, and weight
         public string name { get; set; }
         public int numberOfLegs { get; set; }
         public decimal weight { get; set; }
 
-        //Will be different for each genus
-        public virtual string Noise()
-        {
-            return "Meow?";
-        }
-
-        //Will be different for each species
-        public virtual string getSpecies()
-        {
-            return "Unknown Species";
-        }
-
-        // Overloaded Method of Feed
+        // Overloaded method of Feed
         public string Feed(string food)
         {
             return $"{this.name} ate the {food}";
@@ -31,9 +26,33 @@
         }
 
         //All Animals have to sleep
-        public string sleep()
+        public string Sleep()
         {
             return $"{this.name} is now sleeping";
         }
+
+        // Method Moved To Genus 
+
+        //Specific to genus
+        //public virtual string GetHideType()
+        //{
+        //return "Unknown Hide type";
+        //}
+
+        // Method Moved To Species 
+
+        //Will be different for each species
+        //public virtual string GetSpecies()
+        //{
+        //return "Unknown Species";
+        //}
+
+        // Method Moved To Species 
+
+        //Will be different for each species
+        //public virtual string Noise()
+        //{
+        //return "Meow?";
+        //}
     }
 }
