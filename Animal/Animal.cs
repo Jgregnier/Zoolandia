@@ -1,7 +1,4 @@
-﻿using Zoolandia.Genus;
-using Zoolandia.Species;
-
-namespace Zoolandia.Animals
+﻿namespace Zoolandia.Animals
 {
     public class Animal
     {
@@ -30,29 +27,5 @@ namespace Zoolandia.Animals
         {
             return $"{this.name} is now sleeping";
         }
-
-        // Method Moved To Genus 
-
-        //Specific to genus
-        //public virtual string GetHideType()
-        //{
-        //return "Unknown Hide type";
-        //}
-
-        // Method Moved To Species 
-
-        //Will be different for each species
-        //public virtual string GetSpecies()
-        //{
-        //return "Unknown Species";
-        //}
-
-        // Method Moved To Species 
-
-        //Will be different for each species
-        //public virtual string Noise()
-        //{
-        //return "Meow?";
-        //}
     }
 }

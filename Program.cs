@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using Zoolandia.Animals;
-using Zoolandia.Species;
 using Zoolandia.Genus;
+using Zoolandia.Species;
 
 namespace Zoolandia
 {
@@ -12,10 +13,10 @@ namespace Zoolandia
             Animal myOnlyFriend = new Animal();
 
             //Establishing my dog's Species
-            Species.Species dog = new Dog();
+            Dog dog = new Dog();
 
             //Establishing my dog's Genus
-            Genus.Genus canis = new Canis();
+            Canis canis = new Canis();
 
             myOnlyFriend.species = dog;
             myOnlyFriend.genus = canis;
@@ -27,8 +28,8 @@ namespace Zoolandia
 
             //Making Squirrel
             Animal annoyingSquirrel = new Animal();
-            Species.Species squirrel = new RedSquirrel();
-            Genus.Genus squirrelGenus = new Sciuridae();
+            RedSquirrel squirrel = new RedSquirrel();
+            Sciuridae squirrelGenus = new Sciuridae();
 
             annoyingSquirrel.species = squirrel;
             annoyingSquirrel.genus = squirrelGenus;
@@ -38,13 +39,24 @@ namespace Zoolandia
 
             //Making Alligator
             Animal dirtyAlligatorBastard = new Animal();
-            Species.Species gator = new Gator();
-            Genus.Genus gatorGenus = new Alligatoridae();
+            Gator gator = new Gator();
+            Alligatoridae gatorGenus = new Alligatoridae();
 
             dirtyAlligatorBastard.species = gator;
             dirtyAlligatorBastard.genus = gatorGenus;
 
             dirtyAlligatorBastard.name = "The Stupid Alligator";
+
+            List<Animal> pets = new List<Animal>();
+
+            pets.Add(myOnlyFriend);
+            pets.Add(annoyingSquirrel);
+            pets.Add(dirtyAlligatorBastard);
+
+            foreach(Animal animal in pets)
+            {
+                Console.WriteLine($"{animal.name} inside of our foreach loop\r\n");
+            }
 
             Console.WriteLine($"I had a RAD dog named {myOnlyFriend.name}\r\nHe was a {myOnlyFriend.species.GetSpecies()} of the {myOnlyFriend.genus.GetGenus()} Family");
             Console.WriteLine($"{myOnlyFriend.name} used to always say {myOnlyFriend.species.Noise()}");

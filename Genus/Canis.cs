@@ -1,6 +1,4 @@
-﻿using Zoolandia.Animals;
-
-namespace Zoolandia.Genus
+﻿namespace Zoolandia.Genus
 {
     public class Canis : Genus
     {

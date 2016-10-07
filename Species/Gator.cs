@@ -1,6 +1,4 @@
-﻿using Zoolandia.Genus;
-
-namespace Zoolandia.Species
+﻿namespace Zoolandia.Species
 {
     public class Gator : Species
     {
