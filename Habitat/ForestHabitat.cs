@@ -6,7 +6,7 @@ namespace Zoolandia.Habitat
     {
         public string trimTrees()
         {
-            return "The trees have been trimmed";
+            return $"The trees have been trimmed in {this.public_name}";
         }
         public int normalTemp { get; set;}
 

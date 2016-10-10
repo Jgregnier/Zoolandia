@@ -1,4 +1,6 @@
-﻿namespace Zoolandia.Species
+﻿using Zoolandia.Interfaces;
+
+namespace Zoolandia.Species
 {
     public class ChineseGator : Species
     {

@@ -29,6 +29,13 @@ namespace Zoolandia
             annoyingSquirrel.numberOfLegs = 4;
             annoyingSquirrel.weight = 1M;
 
+            //Making a Chinese Gator
+            Animal chineseGator = new Animal();
+            chineseGator.genus = new Alligatoridae();
+            chineseGator.species = new ChineseGator();
+
+            
+
             //Making the habitat
             ForestHabitat ForestHabitat = new ForestHabitat();
 
@@ -47,7 +54,7 @@ namespace Zoolandia
                 Console.WriteLine($"{animal.name} The {animal.species.GetSpecies()} lives in {ForestHabitat.public_name}\r\n");
             }
 
-            Console.WriteLine($"{ForestHabitat.public_name} has a normal temperature of {ForestHabitat.normalTemp}");
+            Console.WriteLine($"{ForestHabitat.public_name} has a normal temperature of {ForestHabitat.normalTemp} Degrees");
             Console.WriteLine($"{ForestHabitat.public_name} has an area of {ForestHabitat.squareFeet} square feet");
             Console.WriteLine($"{ForestHabitat.trimTrees()}");
         }
