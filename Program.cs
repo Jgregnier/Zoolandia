@@ -12,14 +12,13 @@ namespace Zoolandia
     {
         public static void Main(string[] args)
         {
+            //Making Dog Friend
             Animal myOnlyFriend = new Animal();
-
             myOnlyFriend.species = new Dog();
             myOnlyFriend.genus = new Canis();
 
-            //Making default animal properties
             myOnlyFriend.name = "Winston Beauregard";
-            myOnlyFriend.numberOfLegs = 4;
+            myOnlyFriend.numberOfLegs = 3;
             myOnlyFriend.weight = 70M;
 
             //Making Squirrel
@@ -28,29 +27,22 @@ namespace Zoolandia
             annoyingSquirrel.genus = new Sciuridae();
 
             annoyingSquirrel.name = "Annoying Squirrel";
+            annoyingSquirrel.numberOfLegs = 4;
             annoyingSquirrel.weight = 1M;
 
-            //Making Alligator
-            Animal dirtyAlligatorBastard = new Animal();
-            dirtyAlligatorBastard.species = new Gator();
-            dirtyAlligatorBastard.genus = new Alligatoridae();
-
-            dirtyAlligatorBastard.name = "The Stupid Alligator";
-
-            List<Animal> pets = new List<Animal>();
-
-            pets.Add(myOnlyFriend);
-            pets.Add(annoyingSquirrel);
-            pets.Add(dirtyAlligatorBastard);
-
+            //Making the habitat
             ForestHabitat ForestHabitat = new ForestHabitat();
+
+            //Adding my animals to the habitat
             ForestHabitat.Inhabitants.Add(myOnlyFriend);
             ForestHabitat.Inhabitants.Add(annoyingSquirrel);
 
+            //Habitat properties
             ForestHabitat.normalTemp = 75;
             ForestHabitat.squareFeet = 100;
             ForestHabitat.public_name = "The Happy Forest Habitat";
 
+            //Showing the animals are in the habitat, and that properties/ methods are implemented correctly
             foreach (Animal animal in ForestHabitat.Inhabitants)
             {
                 Console.WriteLine($"{animal.name} The {animal.species.GetSpecies()} lives in {ForestHabitat.public_name}\r\n");
