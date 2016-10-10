@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using Zoolandia.Animals;
 using Zoolandia.Genus;
 using Zoolandia.Species;
+using Zoolandia.Habitat;
+
 
 namespace Zoolandia
 {
@@ -10,61 +11,52 @@ namespace Zoolandia
     {
         public static void Main(string[] args)
         {
+            //Making Dog Friend
             Animal myOnlyFriend = new Animal();
+            myOnlyFriend.species = new Dog();
+            myOnlyFriend.genus = new Canis();
 
-            //Establishing my dog's Species
-            Dog dog = new Dog();
-
-            //Establishing my dog's Genus
-            Canis canis = new Canis();
-
-            myOnlyFriend.species = dog;
-            myOnlyFriend.genus = canis;
-
-            //Making default animal properties
             myOnlyFriend.name = "Winston Beauregard";
-            myOnlyFriend.numberOfLegs = 4;
+            myOnlyFriend.numberOfLegs = 3;
             myOnlyFriend.weight = 70M;
 
             //Making Squirrel
             Animal annoyingSquirrel = new Animal();
-            RedSquirrel squirrel = new RedSquirrel();
-            Sciuridae squirrelGenus = new Sciuridae();
-
-            annoyingSquirrel.species = squirrel;
-            annoyingSquirrel.genus = squirrelGenus;
+            annoyingSquirrel.species = new RedSquirrel();
+            annoyingSquirrel.genus = new Sciuridae();
 
             annoyingSquirrel.name = "Annoying Squirrel";
+            annoyingSquirrel.numberOfLegs = 4;
             annoyingSquirrel.weight = 1M;
 
-            //Making Alligator
-            Animal dirtyAlligatorBastard = new Animal();
-            Gator gator = new Gator();
-            Alligatoridae gatorGenus = new Alligatoridae();
+            //Making a Chinese Gator
+            Animal chineseGator = new Animal();
+            chineseGator.genus = new Alligatoridae();
+            chineseGator.species = new ChineseGator();
 
-            dirtyAlligatorBastard.species = gator;
-            dirtyAlligatorBastard.genus = gatorGenus;
+            
 
-            dirtyAlligatorBastard.name = "The Stupid Alligator";
+            //Making the habitat
+            ForestHabitat ForestHabitat = new ForestHabitat();
 
-            List<Animal> pets = new List<Animal>();
+            //Adding my animals to the habitat
+            ForestHabitat.Inhabitants.Add(myOnlyFriend);
+            ForestHabitat.Inhabitants.Add(annoyingSquirrel);
 
-            pets.Add(myOnlyFriend);
-            pets.Add(annoyingSquirrel);
-            pets.Add(dirtyAlligatorBastard);
+            //Habitat properties
+            ForestHabitat.normalTemp = 75;
+            ForestHabitat.squareFeet = 100;
+            ForestHabitat.public_name = "The Happy Forest Habitat";
 
-            foreach(Animal animal in pets)
+            //Showing the animals are in the habitat, and that properties/ methods are implemented correctly
+            foreach (Animal animal in ForestHabitat.Inhabitants)
             {
-                Console.WriteLine($"{animal.name} inside of our foreach loop\r\n");
+                Console.WriteLine($"{animal.name} The {animal.species.GetSpecies()} lives in {ForestHabitat.public_name}\r\n");
             }
 
-            Console.WriteLine($"I had a RAD dog named {myOnlyFriend.name}\r\nHe was a {myOnlyFriend.species.GetSpecies()} of the {myOnlyFriend.genus.GetGenus()} Family");
-            Console.WriteLine($"{myOnlyFriend.name} used to always say {myOnlyFriend.species.Noise()}");
-            Console.WriteLine($"One day a {annoyingSquirrel.species.GetSpecies()} of the {annoyingSquirrel.genus.GetGenus()} family ran onto our property, lets call him {annoyingSquirrel.name}");
-            Console.WriteLine($"{myOnlyFriend.name} weighed {myOnlyFriend.weight} Pounds, {annoyingSquirrel.name} only weighed {annoyingSquirrel.weight} Pound");
-            Console.WriteLine($"After {myOnlyFriend.name} chased the intruder off our property {annoyingSquirrel.name} called his friend {dirtyAlligatorBastard.name} To fight {myOnlyFriend.name}");
-            Console.WriteLine($"{myOnlyFriend.Sleep()}");
-            Console.WriteLine($"{dirtyAlligatorBastard.Feed("Winston")} :(");
+            Console.WriteLine($"{ForestHabitat.public_name} has a normal temperature of {ForestHabitat.normalTemp} Degrees");
+            Console.WriteLine($"{ForestHabitat.public_name} has an area of {ForestHabitat.squareFeet} square feet");
+            Console.WriteLine($"{ForestHabitat.trimTrees()}");
         }
     }
 }
