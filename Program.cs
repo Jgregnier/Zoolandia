@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Zoolandia.Animals;
 using Zoolandia.Genus;
 using Zoolandia.Species;

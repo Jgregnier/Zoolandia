@@ -1,4 +1,6 @@
-﻿namespace Zoolandia.Habitat
+﻿using Zoolandia.Interfaces;
+
+namespace Zoolandia.Habitat
 {
     public class ForestHabitat : Habitat, IForestHabitat
     {
